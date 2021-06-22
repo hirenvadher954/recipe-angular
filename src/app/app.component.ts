@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-first-project';
+  serverName: string;
+  isServerCreated = false;
+  serverStatus = 'online';
+
+  constructor() {
+    this.serverName = '';
+  }
+
+  handleServerChange(): void {
+    this.isServerCreated = true;
+  }
+
+  getColor(): string {
+    return this.serverStatus === 'offline' ? 'red' : 'green';
+  }
 }
