@@ -6,19 +6,13 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverName: string;
-  isServerCreated = false;
-  serverStatus = 'online';
+  loadedFeature = 'recipe';
 
   constructor() {
-    this.serverName = '';
   }
 
-  handleServerChange(): void {
-    this.isServerCreated = true;
-  }
 
-  getColor(): string {
-    return this.serverStatus === 'offline' ? 'red' : 'green';
+  onNavigate(feature: string): void {
+    this.loadedFeature = feature;
   }
 }
